@@ -2,34 +2,36 @@ package com.example.pokedex.activities;
 
 import static androidx.constraintlayout.motion.utils.Oscillator.TAG;
 
+import android.app.ActionBar;
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.ArrayAdapter;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
-import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.palette.graphics.Palette;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.pokedex.R;
-import com.example.pokedex.adapters.ListPokemonAdapter;
 import com.example.pokedex.adapters.ListSpritesAdapter;
-import com.example.pokedex.models.Pokemon;
 import com.example.pokedex.models.PokemonAbility;
 import com.example.pokedex.models.PokemonDetail;
 import com.example.pokedex.models.PokemonMove;
-import com.example.pokedex.models.PokemonResponse;
-import com.example.pokedex.models.PokemonSprites;
 import com.example.pokedex.models.PokemonType;
 import com.example.pokedex.pokeapi.PokemonService;
+
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -48,10 +50,19 @@ public class DetailActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private ListSpritesAdapter listSpritesAdapter;
 
+    private ConstraintLayout dataLayout;
+
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         this.setContentView(R.layout.activity_detail);
+
+        dataLayout = findViewById(R.id.data);
+        dataLayout.setVisibility(View.GONE);
+
+
         Bundle extras = getIntent().getExtras();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         ImageView pokeImage = findViewById(R.id.imagePoke);
         setTitle("#" + extras.get("id") + " " + ((String) extras.get("name")).toUpperCase(Locale.ROOT) );
         Glide.with(this).load(extras.get("image"))
@@ -59,17 +70,15 @@ public class DetailActivity extends AppCompatActivity {
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(pokeImage);
         retrofit = new Retrofit.Builder().baseUrl("https://pokeapi.co/api/v2/").addConverterFactory(GsonConverterFactory.create()).build();
-
         recyclerView = (RecyclerView) findViewById(R.id.recylerSprites);
         listSpritesAdapter = new ListSpritesAdapter(this);
+        recyclerView.setAdapter(listSpritesAdapter);
+        recyclerView.setHasFixedSize(true);
+        final LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        recyclerView.setLayoutManager(layoutManager);
 
 
         getPokemonDetail((int) extras.get("id"), this);
-        recyclerView.setAdapter(listSpritesAdapter);
-        recyclerView.setHasFixedSize(true);
-        final LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(layoutManager);
-
 
 
     }
@@ -83,15 +92,16 @@ public class DetailActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<PokemonDetail> call, Response<PokemonDetail> response) {
                 if (response.isSuccessful()){
-
+                    dataLayout.setVisibility(View.VISIBLE);
+                    ConstraintLayout progress = findViewById(R.id.loading);
+                    progress.setVisibility(View.GONE);
                     PokemonDetail pokemonDetail = response.body();
                     TextView weight = findViewById(R.id.weight);
-
                     pokemonDetail.getSprites();
                     showPokemonTypes(pokemonDetail.getTypes(), context);
                     showPokemonMoves(pokemonDetail.getMoves(), context);
                     showPokemonAbilities(pokemonDetail.getAbilities(), context);
-
+                    listSpritesAdapter.addList(pokemonDetail.getSprites().getImagesSprites());
                     weight.setText(pokemonDetail.getWeight() + " KG");
 
 
@@ -160,13 +170,8 @@ public class DetailActivity extends AppCompatActivity {
         }
     }
 
-    private void showSprites (PokemonSprites pokemonSprites, Context context) {
-
-        ArrayList<String> sprites = new ArrayList<>();
 
 
-
-    }
 
 
 }

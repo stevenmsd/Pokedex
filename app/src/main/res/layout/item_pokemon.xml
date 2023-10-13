@@ -2,21 +2,18 @@
 
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cards"
-    android:layout_width="200dp"
-    android:layout_height="200dp"
+    android:layout_width="190dp"
+    android:layout_height="195dp"
     app:cardCornerRadius="4dp"
     app:cardElevation="4dp"
     app:cardUseCompatPadding="true"
-
     android:foreground="?android:attr/selectableItemBackground">
 
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-
         android:layout_height="match_parent">
 
 
@@ -27,7 +24,7 @@
             android:layout_marginTop="20dp"
             android:gravity="center_horizontal"
             android:text="@string/texto"
-            android:textAllCaps="true"></TextView>
+            android:textAllCaps="true"/>
 
         <ImageView
             android:id="@+id/pictureImageView"

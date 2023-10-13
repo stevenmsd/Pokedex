@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,9 +12,14 @@
 
 
 
+
+
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -30,8 +38,29 @@
                 tools:ignore="contentDescription"
                 />
 
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/loading"
+                android:layout_width="match_parent"
+                android:layout_height="572dp">
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="@style/CustomProgressBar"
+                    android:layout_width="67dp"
+                    android:layout_height="69dp"
+                    android:progressBackgroundTint="#9C27B0"
+                    android:progressTint="#B52D2D"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.363" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/data"
                 android:layout_width="match_parent"
                 android:layout_height="606dp">
 
@@ -109,7 +138,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="32dp"
-                    android:text="Peso:"
+                    android:text="Weight"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
@@ -121,7 +150,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="24dp"
-                    android:text="Movimientos"
+                    android:text="Moves"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
@@ -133,7 +162,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
-                    android:text="Habilidades"
+                    android:text="Abilities"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
@@ -145,7 +174,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="20dp"
-                    android:text="Espíritus"
+                    android:text="Sprites"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
@@ -164,15 +193,15 @@
                     app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id = "@+id/recylerSprites"
-                    android:layout_width="401dp"
-                    android:layout_height="57dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:id="@+id/recylerSprites"
+                    android:layout_width="408dp"
+                    android:layout_height="109dp"
+                    android:layout_marginTop="48dp"
+                    android:orientation="horizontal"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.3"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:layout_editor_absoluteX="3dp"
-                    tools:layout_editor_absoluteY="428dp" />
+                    app:layout_constraintTop_toTopOf="@+id/peso3" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
