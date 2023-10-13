@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Pokedex</string>
+    <string name="texto">Pokemon</string>
+    <string name="description"> Esta es ka descripcion del pokemon</string>
+</resources>

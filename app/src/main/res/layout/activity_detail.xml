@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.pokedex.activities.DetailActivity">
+
+    <ImageView
+        android:id="@+id/imagePoke"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bulbasur"
+        android:contentDescription=""
+        tools:ignore="contentDescription"
+        />
+
+
+    <TextView
+        android:layout_marginTop="16dp"
+        android:id="@+id/tv_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text = "Bulbasaur (フシギダネ Fushigidane en japonés) es un Pokémon de tipo planta/veneno introducido en la primera generación. Es uno de los tres Pokémon iniciales que pueden elegir los entrenadores que empiezan su aventura en la región de Kanto, junto a Charmander y Squirtle. Se destaca por ser el primer Pokémon de la Pokédex Nacional.
+        Este contenido proviene de wikidex.net, y debe darse atribución a sus autores, tal como especifica la licencia.
+        Se prohíbe su uso a PlagioDex (el wiki de FANDOOM), por copiar reiteradamente sin dar atribución"/>
+</LinearLayout>
