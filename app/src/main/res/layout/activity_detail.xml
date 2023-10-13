@@ -31,12 +31,11 @@
             <ImageView
                 android:id="@+id/imagePoke"
                 android:layout_width="match_parent"
-                android:layout_height="280dp"
+                android:layout_height="319dp"
+                android:contentDescription=""
                 android:scaleType="centerCrop"
                 android:src="@drawable/bulbasur"
-                android:contentDescription=""
-                tools:ignore="contentDescription"
-                />
+                tools:ignore="contentDescription" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/loading"
@@ -54,7 +53,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.363" />
+                    app:layout_constraintVertical_bias="0.284" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

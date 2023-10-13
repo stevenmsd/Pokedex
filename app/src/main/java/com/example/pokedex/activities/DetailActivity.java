@@ -65,7 +65,7 @@ public class DetailActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         ImageView pokeImage = findViewById(R.id.imagePoke);
         setTitle("#" + extras.get("id") + " " + ((String) extras.get("name")).toUpperCase(Locale.ROOT) );
-        Glide.with(this).load(extras.get("image"))
+        Glide.with(this).load("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/" + extras.get("id")+ ".png")
                 .centerCrop().crossFade()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(pokeImage);

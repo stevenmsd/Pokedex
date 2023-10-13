@@ -45,7 +45,7 @@ public class ListPokemonAdapter extends RecyclerView.Adapter<ListPokemonAdapter.
     public void onBindViewHolder(@NonNull ListPokemonAdapter.ViewHolder holder, int position) {
         pokemon = dataset.get(position);
         holder.nameTextView.setText( "#"+pokemon.getNumber()+ " " + " " + pokemon.getName());
-        Glide.with(context).load("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"+ pokemon.getNumber()+".png")
+        Glide.with(context).load("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"+ pokemon.getNumber()+".png")
                 .centerCrop().crossFade()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(holder.pictureImageView);
@@ -87,7 +87,6 @@ public class ListPokemonAdapter extends RecyclerView.Adapter<ListPokemonAdapter.
                     Intent i = new Intent(view.getContext(), DetailActivity.class);
                     i.putExtra("name",poke.getName());
                     i.putExtra("id",poke.getNumber());
-                    i.putExtra("image","https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"+ poke.getNumber()+".png");
                     view.getContext().startActivity(i);
 
                     break;
