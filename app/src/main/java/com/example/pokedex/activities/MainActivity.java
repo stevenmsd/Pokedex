@@ -5,10 +5,11 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.pokedex.ListPokemonAdapter;
+import com.example.pokedex.adapters.ListPokemonAdapter;
 import com.example.pokedex.R;
 import com.example.pokedex.models.Pokemon;
 import com.example.pokedex.models.PokemonResponse;
@@ -41,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
         this.setContentView(R.layout.activity_main);
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
 
         listPokemonAdapter = new ListPokemonAdapter(this);

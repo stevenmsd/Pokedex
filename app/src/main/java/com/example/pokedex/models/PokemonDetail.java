@@ -8,27 +8,18 @@ import java.util.ArrayList;
 
 
 public class PokemonDetail {
-    private String name;
-    private int id;
+    private String weight;
     private ArrayList<PokemonType> types;
     private PokemonSprites sprites;
     private ArrayList<PokemonAbility> abilities;
     private ArrayList<PokemonMove> moves;
 
-    public String getName() {
-        return name;
+    public String getWeight() {
+        return weight;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+    public void setWeight(String weight) {
+        this.weight = weight;
     }
 
     public ArrayList<PokemonType> getTypes() {
