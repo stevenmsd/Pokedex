@@ -119,7 +119,6 @@ public class DetailActivity extends AppCompatActivity {
 
 
                 }else{
-                    System.out.println("No correctoooooooooo");
                     Log.e(TAG, "on response" + response.errorBody());
                 }
             }
