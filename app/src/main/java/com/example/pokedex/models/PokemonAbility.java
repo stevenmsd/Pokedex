@@ -9,6 +9,7 @@ public class PokemonAbility {
         return ability;
     }
 
+
     public boolean isHidden() {
         return isHidden;
     }
@@ -18,17 +19,21 @@ public class PokemonAbility {
     }
 
 
-}
+    public class Ability {
+        private String name;
+        private String url;
 
- class Ability {
-    private String name;
-    private String url;
+        public String getName() {
+            return name;
+        }
 
-    public String getName() {
-        return name;
+        public String getUrl() {
+            return url;
+        }
     }
 
-    public String getUrl() {
-        return url;
-    }
+
+
+
+
 }

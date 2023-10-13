@@ -1,5 +1,7 @@
 package com.example.pokedex.models;
 
+import java.util.ArrayList;
+
 public class PokemonSprites {
     private String backDefault;
     private String backShiny;
@@ -21,4 +23,6 @@ public class PokemonSprites {
     public String getFrontShiny() {
         return frontShiny;
     }
+
+    
 }
