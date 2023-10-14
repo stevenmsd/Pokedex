@@ -1,7 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,11 +6,15 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.pokedex.activities.DetailActivity">
+    <androidx.appcompat.widget.Toolbar
 
-
-
-
-
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+        android:background="@color/white"
+        app:theme="@style/ThemeOverlay.AppCompat"
+     />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -28,34 +29,21 @@
             tools:context="com.example.pokedex.activities.DetailActivity"
             >
 
-            <ImageView
-                android:id="@+id/imagePoke"
+            <FrameLayout
+                android:id="@+id/topLayout"
                 android:layout_width="match_parent"
-                android:layout_height="365dp"
-                android:contentDescription=""
-                android:scaleType="centerCrop"
-                android:src="@drawable/bulbasur"
-                tools:ignore="contentDescription" />
+                android:layout_height="390dp"
+                android:background="@drawable/semicircle_background">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/loading"
-                android:layout_width="match_parent"
-                android:layout_height="572dp">
-
-                <ProgressBar
-                    android:id="@+id/progressBar"
-                    style="@style/CustomProgressBar"
-                    android:layout_width="67dp"
-                    android:layout_height="69dp"
-                    android:progressBackgroundTint="#9C27B0"
-                    android:progressTint="#B52D2D"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.284" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                <ImageView
+                    android:id="@+id/imagePoke"
+                    android:layout_width="match_parent"
+                    android:layout_height="410dp"
+                    android:contentDescription=""
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/bulbasur"
+                    tools:ignore="contentDescription" />
+            </FrameLayout>
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -90,14 +78,14 @@
                     android:id="@+id/scrollView3"
                     android:layout_width="409dp"
                     android:layout_height="46dp"
-                    android:layout_marginTop="216dp"
+                    android:layout_marginTop="16dp"
                     android:isScrollContainer="true"
                     android:orientation="horizontal"
                     android:scrollbars="none"
                     android:textAlignment="center"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/peso4"
                     tools:ignore="MissingConstraints">
 
                     <LinearLayout
@@ -110,24 +98,23 @@
 
                 <ScrollView
                     android:id="@+id/scrollView2"
-                    android:layout_width="355dp"
-                    android:layout_height="43dp"
-                    android:layout_marginTop="32dp"
+                    android:layout_width="183dp"
+                    android:layout_height="51dp"
+                    android:layout_marginTop="16dp"
                     android:isScrollContainer="true"
                     android:orientation="horizontal"
-                    android:textAlignment="center"
-
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toEndOf="@+id/height"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:ignore="MissingConstraints">
 
                     <LinearLayout
                         android:id="@+id/typeList"
                         android:layout_width="match_parent"
-
                         android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
+                        android:gravity="end"
+
                         android:orientation="horizontal" />
                 </ScrollView>
 
@@ -136,24 +123,37 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="32dp"
+                    android:layout_marginTop="20dp"
                     android:text="Weight"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textSize="16dp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+                    app:layout_constraintTop_toTopOf="@+id/divider2" />
+
+                <TextView
+                    android:id="@+id/peso5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Height"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/divider3"
+                    app:layout_constraintTop_toTopOf="@+id/divider2" />
 
                 <TextView
                     android:id="@+id/peso4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="24dp"
                     android:text="Moves"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/peso" />
+                    app:layout_constraintTop_toBottomOf="@+id/divider3" />
 
                 <TextView
                     android:id="@+id/peso2"
@@ -181,26 +181,86 @@
 
                 <TextView
                     android:id="@+id/weight"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="110dp"
+                    android:layout_height="29dp"
 
-                    android:layout_marginTop="32dp"
+                    android:layout_marginTop="16dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    app:layout_constraintEnd_toStartOf="@+id/divider3"
+                    app:layout_constraintHorizontal_bias="0.19"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/peso" />
+
+                <TextView
+                    android:id="@+id/height"
+                    android:layout_width="110dp"
+                    android:layout_height="29dp"
+
+                    android:layout_marginTop="12dp"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.836"
-                    app:layout_constraintStart_toEndOf="@+id/peso"
-                    app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+                    app:layout_constraintHorizontal_bias="0.336"
+                    app:layout_constraintStart_toEndOf="@+id/divider3"
+                    app:layout_constraintTop_toBottomOf="@+id/peso5" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recylerSprites"
                     android:layout_width="408dp"
                     android:layout_height="109dp"
-                    android:layout_marginTop="48dp"
+                    android:layout_marginTop="36dp"
                     android:orientation="horizontal"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.3"
+                    app:layout_constraintHorizontal_bias="0.666"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/peso3" />
+
+                <TextView
+                    android:id="@+id/pokemonName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Charizard"
+                    android:textColor="#272525"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/pokemonId"
+                    android:layout_width="128dp"
+                    android:layout_height="27dp"
+                    android:layout_marginTop="4dp"
+                    android:text="N° 24"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.067"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/pokemonName" />
+
+                <View
+                    android:id="@+id/divider2"
+                    android:layout_width="409dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="16dp"
+                    android:background="?android:attr/listDivider"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/pokemonId" />
+
+                <View
+                    android:id="@+id/divider3"
+                    android:layout_width="1dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="196dp"
+                    android:background="?android:attr/listDivider"
+                    android:scrollbarSize="2dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.936"
+                    app:layout_constraintStart_toEndOf="@+id/peso"
+                    app:layout_constraintTop_toTopOf="@+id/divider2" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

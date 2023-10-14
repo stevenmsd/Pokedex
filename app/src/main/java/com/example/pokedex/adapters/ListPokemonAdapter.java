@@ -46,11 +46,9 @@ public class ListPokemonAdapter extends RecyclerView.Adapter<ListPokemonAdapter.
         pokemon = dataset.get(position);
         holder.nameTextView.setText( "#"+pokemon.getNumber()+ " " + " " + pokemon.getName());
         Glide.with(context).load("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"+ pokemon.getNumber()+".png")
-                .centerCrop().crossFade()
+                .centerCrop().centerCrop()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(holder.pictureImageView);
-
-
 
     }
 

@@ -15,7 +15,5 @@
     </style>
 
 
-    <style name="CustomProgressBar">
-        <item name="android:progressTint">@color/purple_500</item>
-    </style>
+
 </resources>

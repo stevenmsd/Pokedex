@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 public class PokemonDetail {
     private String weight;
+    private String height;
     private ArrayList<PokemonType> types;
     private PokemonSprites sprites;
     private ArrayList<PokemonAbility> abilities;
@@ -18,8 +19,16 @@ public class PokemonDetail {
         return weight;
     }
 
+    public String getHeight() {
+        return height;
+    }
+
     public void setWeight(String weight) {
         this.weight = weight;
+    }
+
+    public void setHeight(String height) {
+        this.height = height;
     }
 
     public ArrayList<PokemonType> getTypes() {

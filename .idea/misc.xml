@@ -4,8 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Carlos/AndroidStudioProjects/Pokedex/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2435" />
+        <entry key="..\:/Users/Carlos/AndroidStudioProjects/Pokedex/app/src/main/res/drawable-v24/semicircle_background.xml" value="0.194" />
         <entry key="..\:/Users/Carlos/AndroidStudioProjects/Pokedex/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2435" />
         <entry key="..\:/Users/Carlos/AndroidStudioProjects/Pokedex/app/src/main/res/drawable/rounded_corner.xml" value="0.237" />
+        <entry key="..\:/Users/Carlos/AndroidStudioProjects/Pokedex/app/src/main/res/drawable/toolbar_bg.xml" value="0.2585" />
         <entry key="..\:/Users/Carlos/AndroidStudioProjects/Pokedex/app/src/main/res/layout/activity_detail.xml" value="0.264" />
         <entry key="..\:/Users/Carlos/AndroidStudioProjects/Pokedex/app/src/main/res/layout/activity_main.xml" value="0.24547101449275363" />
         <entry key="..\:/Users/Carlos/AndroidStudioProjects/Pokedex/app/src/main/res/layout/item_list.xml" value="0.21693840579710144" />

@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
 
 
-
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
         listPokemonAdapter = new ListPokemonAdapter(this);
         recyclerView.setAdapter(listPokemonAdapter);

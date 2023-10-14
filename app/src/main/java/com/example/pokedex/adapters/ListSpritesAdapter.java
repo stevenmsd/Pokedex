@@ -41,7 +41,7 @@ public class ListSpritesAdapter extends RecyclerView.Adapter<ListSpritesAdapter.
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
         Glide.with(context).load(dataset.get(position))
-                .centerCrop().crossFade()
+                .centerCrop().centerCrop()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(holder.spriteImageView);
 
